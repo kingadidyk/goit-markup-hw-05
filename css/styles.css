@@ -567,18 +567,42 @@ img {
 
 .antenna {
   background-color: var(--background2-color);
+  border-radius: 4px;
+  transition-property: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);  */
 }
+
+.antenna:hover {
+  border: 2px solid var(--background5-color);
+  /* fill: var(--text2-color);*/
+}
+
+
 
 .clock {
   background-color: var(--background2-color);
+  border-radius: 4px;
+}
+
+.clock:hover {
+  border: 2px solid var(--background5-color);
 }
 
 .diagram {
   background-color: var(--background2-color);
+  border-radius: 4px;
+}
+
+.diagram:hover {
+  border: 2px solid var(--background5-color);
 }
 
 .astronaut {
   background-color: var(--background2-color);
+  border-radius: 4px;
+}
+
+.astronaut:hover {
+  border: 2px solid var(--background5-color);
 }
 
 .sm-icon {
@@ -695,28 +719,6 @@ img {
   bottom: 0;
   margin-bottom: 0;
 }
-/*
-.portfolio-image {
-  position: relative;
-  overflow: hidden;
-}
-
-.overlay-portfolio > p {
-  color: var(--text4-color);
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0.03em;
-  padding: 49px 45px 49px 24px;
-}
-
-.overlay-portfolio {
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  align-items: center;
-} */
 
 .bluelink.index::after {
   content: "";
@@ -739,3 +741,101 @@ img {
   background-color: var(--background5-color);
   width: 100%;
 }
+
+.portfolio-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-image:hover .overlay-portfolio {
+  transform: translateY(0);
+}
+
+.overlay-portfolio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background5-color);
+  display: flex;
+  align-items: center;
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay-portfolio > p {
+  color: var(--text4-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  padding: 49px 45px 49px 24px;
+}
+
+
+/* modal window */
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms ease, visibility 550ms ease;
+  animation-name: backdrop-animation;
+  animation-duration: 3000ms;
+}
+
+.modal {
+  display: flex;
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--background4-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.button-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--background4-color);
+  cursor: pointer;
+}
+
+
+ @keyframes backdrop-animation {
+  0% {
+    transform: scale(0.2);
+    background-color: transparent;
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: transparent;
+  }
+  100% {
+    transform: scale(1);
+    background-color: transparent;
+  }
+} */
